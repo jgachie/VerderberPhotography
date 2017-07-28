@@ -22,6 +22,7 @@ body{
     background-size: 100%;
     background-position: center;
     background-attachment: fixed;
+    z-index: 1;
 }
 
 main{
@@ -46,7 +47,7 @@ p{
     text-align: justify;
 }
 
-figure:nth-of-type(4){
+figure:nth-of-type(4n){
     margin-right: 0;
 }
 
@@ -241,7 +242,7 @@ figure:nth-of-type(4){
 
 #sidebar{
     margin-top: 1em;
-    padding: 0em .5em 1em .5em;
+    padding: 0 .5em 1em .5em;
     border: 2px solid black;
     float: right;
     min-height: 500px;
@@ -269,4 +270,44 @@ figure:nth-of-type(4){
     display: block;
     width: 40%;
     border: 2px solid black;
+}
+
+#gallery_viewer{
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 75%;
+    left: 25.5%;
+    top: 16%;
+    display: none;
+    max-width: 50%;
+    max-height: 50%;
+    opacity: 100%;
+    z-index: 2000;
+}
+
+#viewer_img{
+    vertical-align: middle;
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+#overlay{
+    display: block;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 200%;
+    background-color: black;
+    z-index: 1001;
+    -moz-opacity: 0.8;
+    opacity: .9;
+    filter: alpha(opacity=80);
+    display: none;
+}
+
+#title_img_block{
+    background-image: URL("Resources/Misc/MichyPic_Cropped.jpg");
 }
