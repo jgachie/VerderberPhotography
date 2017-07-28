@@ -1,0 +1,272 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 17, 2017, 12:21:26 PM
+    Author     : Soup
+*/
+
+body{
+    margin: auto;
+    margin-bottom: 1em;
+    width: 95%;
+    height: 100%;
+    max-width: 1824px;
+    min-width: 960px;
+    font-family: Calibri;
+    font-size: 100%;
+    max-width: 1920px;
+    min-width: 1824px;
+    background-size: 100%;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: .5em 1em .5em 1em;
+    font-size: 120%;
+    min-height: 500px;
+    width: 75%;
+    border: 2px solid black;
+    float: left;
+}
+
+footer{
+    margin-left: 1.1em;
+    clear: both;
+    text-align: left;
+    color: gray;
+}
+
+p{
+    text-align: justify;
+}
+
+figure:nth-of-type(4){
+    margin-right: 0;
+}
+
+.title_link{
+    text-decoration: none;
+}
+
+.page_header{
+    margin: 0;
+    font-family: Edwardian Script ITC;
+    text-align: center;
+    font-size: 300%;
+}
+
+.gallery_album{
+    margin: 1em 1em 1em .21em;
+    padding: .5em;
+    display: block;
+    border: solid 2px black;
+    width: 21.9%;
+    float: left;
+}
+
+.gallery_album_cap{
+    text-align: center;
+    font-family: Edwardian Script ITC;
+    font-size: 160%;
+    font-weight: bold;
+}
+
+.gallery_album img{
+    width: 100%;
+}
+
+.contact_form{
+    margin-top: 0;
+    padding-top: 0;
+    font-family: Calibri;
+    font-size: 100%;
+    width: 45%;
+    height: 1.5em;
+}
+
+.contact_label{
+    font-size: 80%;
+}
+
+#title{
+    color: black;
+    font-size: 675%;
+    font-family: Edwardian Script ITC;
+    text-align: center;
+    margin: 0px;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+#title_block{
+    position: absolute;
+    top: 36.5%; 
+    left: 0;
+    margin-left: 8%;
+    padding: 0px;
+}
+
+#title_img{
+    margin: auto;
+    display: block;
+    position: relative;
+    padding: 0px;
+    width: 100%;
+}
+
+#title_icon{
+    display: block;
+    margin: auto;
+    width: 6.75%;
+}
+
+#contact{
+    float: left;
+    margin-left: 2%;
+    margin-right: 0;
+    background-color: lightgray;
+    padding: 2em;
+    width: 60%;
+}
+
+#contact_info{
+    margin-top: 0;
+    float: right;
+    padding-left: 1.25em;
+    border-left: 2px solid gray;
+    width: 28.6%;
+    min-height: 23.45em;
+}
+
+#contact_info p{
+    font-size: 80%;
+    margin: 0;
+}
+
+#contact_info p:nth-of-type(even){
+    color: orange;
+}
+
+#contact_name{
+    float: left;
+}
+
+#contact_email{
+    float: right;
+}
+
+#contact_subject{
+    float: left;
+}
+
+#contact_phone{
+    float: right;
+}
+
+#contact_message{
+    width: 100%;
+    min-height: 10em;
+    max-width: 100%;
+    font-family: Calibri;
+    font-size: 90%;
+}
+
+#contact_submit{
+    float: right;
+    font-family: Calibri;
+    font-size: 100%;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+}
+
+#email_label{
+    float: right;
+    margin-right: 40.5%;
+}
+
+#phone_label{
+    float: right;
+    margin-right: 23.05%;
+}
+
+#navbar{
+    width: 100%;
+    margin-top: 2em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 100%;
+    clear: both;
+}
+
+#navbar ul{
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    min-width: 400px;
+}
+
+#navbar ul li{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    float: left;
+    width: 20%;
+    display: inline;
+    margin-bottom: 20px;
+}
+
+#navbar ul li a{
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-family: Edwardian Script ITC;
+    font-size: 36px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#navbar ul li a:hover, #navbar ul li a:focus{
+    
+}
+
+#navbar ul li a:active{
+    
+}
+
+#sidebar{
+    margin-top: 1em;
+    padding: 0em .5em 1em .5em;
+    border: 2px solid black;
+    float: right;
+    min-height: 500px;
+    min-width: 20%;
+}
+
+#sidebar_header{
+    margin-top: .5em;
+    font-family: Edwardian Script ITC;
+    font-size: 250%;
+    text-align: center;
+}
+
+#holder{
+    display: block;
+    margin: auto;
+}
+
+#holder_text{
+    text-align: center;
+}
+
+#about_img1{
+    margin: auto;
+    display: block;
+    width: 40%;
+    border: 2px solid black;
+}
