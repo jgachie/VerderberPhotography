@@ -132,6 +132,11 @@ function albumRevert(element){
     albumCtr = 0;
 }
 
+function emailAlert(){
+    alert("Thank you for contacting me! I try to read all of my emails as soon as they come, but please" +
+            " allow me 3 - 5 business days to get back to you.");
+}
+
 function galleryViewer(element){
     $("#gallery_overlay").fadeIn("slow");
     

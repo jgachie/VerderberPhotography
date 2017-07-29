@@ -1,7 +1,19 @@
 <?php
-    echo "Hello";
+    $name = filter_input(INPUT_POST, 'cust_name', FILTER_SANITIZE_STRING);
+    $email = filter_input(INPUT_POST, 'cust_email', FILTER_SANITIZE_EMAIL);
+    $phone = filter_input(INPUT_POST, 'cust_phone', FILTER_SANITIZE_NUMBER_INT);
+    $subject = filter_input(INPUT_POST, 'cust_subject', FILTER_SANITIZE_STRING);
+    $message = filter_input(INPUT_POST, 'cust_message', FILTER_SANITIZE_STRING);
+        
+    $headers = 'From: '.$name.' <'.$email.'>';
+        
+    if ($phone != null){
+        $headers = $headers.' ('.$phone.')';
+    }
+        
+    mail('waffleman566@gmail.com', $subject, $message, $headers);
 ?>
-
+    
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -39,7 +51,7 @@ and open the template in the editor.
         </header>
         <main>
             <h1 class="page_header">Contact</h1>
-            <form id="contact" name="contact_form" action="#" method="post">
+            <form id="contact" name="contact_form" method="post" onsubmit="emailAlert()">
                 <label id="name_label" class="contact_label" for="contact_name">NAME</label>
                 <label id="email_label" class="contact_label" for="contact_email">EMAIL</label>
                 <div>
@@ -66,7 +78,7 @@ and open the template in the editor.
                     at an affordable price, please send me an email (or just fill out the form to the left)!</p>
                 <br>
                 <p>EMAIL</p>
-                <p>michelleverder@notarealsite.dumb</p>
+                <p>michelleverder@notarealsite.fake</p>
                 <br>
                 <p>PHONE</p>
                 <p>123-456-7890</p>

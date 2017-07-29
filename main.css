@@ -198,6 +198,7 @@ figure:nth-of-type(4n){
 }
 
 #contact_submit{
+    margin-top: 2%;
     float: right;
     font-family: Calibri;
     font-size: 100%;
