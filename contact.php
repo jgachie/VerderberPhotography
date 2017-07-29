@@ -1,3 +1,7 @@
+<?php
+    echo "Hello";
+?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -28,7 +32,7 @@ and open the template in the editor.
                     <li><a href="index.html">Homepage</a></li>
                     <li><a href="packages.html">Packages</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>

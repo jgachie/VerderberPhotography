@@ -10,30 +10,32 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="main.css">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="Resources/Misc/favicon.ico" type="image/x-icon">
         <script src="functions.js"></script>
         <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
     </head>
     <body>
         <header>
-            <img id="title_img" src="Resources/Misc/MichyPic_Cropped.jpg" alt="MichyPic_Cropped.jpg">
+            <div id="title_img_block">
+                <img id="title_img" src="Resources/Misc/MichyPic_Cropped.jpg" alt="MichyPic_Cropped.jpg">
+            </div>
             <div id="title_block">
-            <a class="title_link" href="?"><img id="title_icon" src="Resources/Misc/Camera_Icon.png" alt="camera_icon"></a>
-            <a class="title_link" href="?"><h1 id="title">Verderber Photography</h1></a>
+                <img id="title_icon" src="Resources/Misc/Camera_Icon.png" alt="camera_icon">
+                <h1 id="title">Verderber Photography</h1>
             </div>
             <nav id="navbar">
                 <ul>
                     <li><a href="index.html">Homepage</a></li>
                     <li><a href="packages.html">Packages</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
         </header>
         <main>
-            <h1 class="page_header">About Me</h1>
-            <img id="about_img1" src="Resources/Misc/MichyPic3.jpg" alt="MichyPic2.jpg">
+            <h1 class="page_header">About</h1>
+            <img id="about_img" src="Resources/Misc/MichyPic3.jpg" alt="MichyPic2.jpg">
             <p>My name is Michelle Verderber and I'm currently studying photography at Appalachian
                 State University. I use a Canon T5i camera with a 50mm lens. I enjoy taking nature
                 shots at Sarah P. Duke Gardens and hiking the trails at the Blue Ridge Parkway.</p>

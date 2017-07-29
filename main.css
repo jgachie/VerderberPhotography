@@ -13,8 +13,6 @@ body{
     margin-bottom: 1em;
     width: 95%;
     height: 100%;
-    max-width: 1824px;
-    min-width: 960px;
     font-family: Calibri;
     font-size: 100%;
     max-width: 1920px;
@@ -22,6 +20,7 @@ body{
     background-size: 100%;
     background-position: center;
     background-attachment: fixed;
+    z-index: 1;
 }
 
 main{
@@ -32,6 +31,7 @@ main{
     min-height: 500px;
     width: 75%;
     border: 2px solid black;
+    border-radius: 8px;
     float: left;
 }
 
@@ -46,39 +46,8 @@ p{
     text-align: justify;
 }
 
-figure:nth-of-type(4){
+figure:nth-of-type(4n){
     margin-right: 0;
-}
-
-.title_link{
-    text-decoration: none;
-}
-
-.page_header{
-    margin: 0;
-    font-family: Edwardian Script ITC;
-    text-align: center;
-    font-size: 300%;
-}
-
-.gallery_album{
-    margin: 1em 1em 1em .21em;
-    padding: .5em;
-    display: block;
-    border: solid 2px black;
-    width: 21.9%;
-    float: left;
-}
-
-.gallery_album_cap{
-    text-align: center;
-    font-family: Edwardian Script ITC;
-    font-size: 160%;
-    font-weight: bold;
-}
-
-.gallery_album img{
-    width: 100%;
 }
 
 .contact_form{
@@ -94,35 +63,87 @@ figure:nth-of-type(4){
     font-size: 80%;
 }
 
-#title{
-    color: black;
-    font-size: 675%;
-    font-family: Edwardian Script ITC;
-    text-align: center;
-    margin: 0px;
-    text-shadow: 0 0 5px #FFFFFF;
-}
-
-#title_block{
-    position: absolute;
-    top: 36.5%; 
-    left: 0;
-    margin-left: 8%;
-    padding: 0px;
-}
-
-#title_img{
-    margin: auto;
+.gallery_album{
+    margin: 1em 1em 1em .21em;
+    padding: .5em;
     display: block;
-    position: relative;
-    padding: 0px;
+    border: solid 2px black;
+    border-radius: 8px;
+    width: 21.9%;
+    float: left;
+}
+
+.gallery_album_cap{
+    text-align: center;
+    font-family: Edwardian Script ITC;
+    font-size: 160%;
+    font-weight: bold;
+}
+
+.gallery_album img{
     width: 100%;
 }
 
-#title_icon{
-    display: block;
+.home_nav_left{
+    margin: 0 0 0 9.8%;
+    padding: 0;
+    float: left;
+    width: 40%;
+    position: relative;
+    z-index: 1;
+}
+
+.home_nav_right{
+    margin: 0 9.8% 0 0;
+    padding: 0;
+    float: right;
+    width: 40%;
+    position: relative;
+}
+
+.nav_img{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.nav_overlay{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: .8;
+    display: none;
+}
+
+.overlay_text{
+    margin-top: 25%;
+    color: black;
+    text-decoration: none;
+    font-family: Edwardian Script ITC;
+    font-size: 400%;
+    text-align: center;
+}
+
+.page_header{
+    margin: 0;
+    font-family: Edwardian Script ITC;
+    text-align: center;
+    font-size: 300%;
+}
+
+.title_link{
+    text-decoration: none;
+}
+
+#about_img{
     margin: auto;
-    width: 6.75%;
+    display: block;
+    width: 40%;
+    border: 2px solid black;
+    border-radius: 6px;
 }
 
 #contact{
@@ -132,6 +153,10 @@ figure:nth-of-type(4){
     background-color: lightgray;
     padding: 2em;
     width: 60%;
+}
+
+#contact_email{
+    float: right;
 }
 
 #contact_info{
@@ -152,15 +177,15 @@ figure:nth-of-type(4){
     color: orange;
 }
 
+#contact_message{
+    width: 100%;
+    min-height: 10em;
+    max-width: 100%;
+    font-family: Calibri;
+    font-size: 90%;
+}
+
 #contact_name{
-    float: left;
-}
-
-#contact_email{
-    float: right;
-}
-
-#contact_subject{
     float: left;
 }
 
@@ -168,12 +193,8 @@ figure:nth-of-type(4){
     float: right;
 }
 
-#contact_message{
-    width: 100%;
-    min-height: 10em;
-    max-width: 100%;
-    font-family: Calibri;
-    font-size: 90%;
+#contact_subject{
+    float: left;
 }
 
 #contact_submit{
@@ -189,9 +210,54 @@ figure:nth-of-type(4){
     margin-right: 40.5%;
 }
 
-#phone_label{
-    float: right;
-    margin-right: 23.05%;
+#gallery_overlay{
+    display: block;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1001;
+    -moz-opacity: 0.8;
+    opacity: .9;
+    filter: alpha(opacity=80);
+    display: none;
+}
+
+#gallery_viewer{
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 75%;
+    left: 25%;
+    top: 16%;
+    display: none;
+    max-width: 50%;
+    max-height: 50%;
+    opacity: 100%;
+    z-index: 2000;
+}
+
+#holder{
+    display: block;
+    margin: auto;
+}
+
+#holder_text{
+    text-align: center;
+}
+
+#home_p{
+    margin: 2% 10% 1% 10%;
+    padding-bottom: 1%;
+    border-bottom: 2px solid black;
+}
+
+#left_arrow{
+    position: fixed;
+    top: 50%;
+    left: 20.65%;
 }
 
 #navbar{
@@ -239,10 +305,22 @@ figure:nth-of-type(4){
     
 }
 
+#phone_label{
+    float: right;
+    margin-right: 23.05%;
+}
+
+#right_arrow{
+    position: fixed;
+    top: 50%;
+    right: 20.65%;
+}
+
 #sidebar{
     margin-top: 1em;
-    padding: 0em .5em 1em .5em;
+    padding: 0 .5em 1em .5em;
     border: 2px solid black;
+    border-radius: 8px;
     float: right;
     min-height: 500px;
     min-width: 20%;
@@ -255,18 +333,45 @@ figure:nth-of-type(4){
     text-align: center;
 }
 
-#holder{
-    display: block;
-    margin: auto;
-}
-
-#holder_text{
+#title{
+    color: black;
+    font-size: 675%;
+    font-family: Edwardian Script ITC;
     text-align: center;
+    margin: 0px;
+    padding: 0;
+    text-shadow: 0 0 5px #FFFFFF;
 }
 
-#about_img1{
+#title_block{
+    position: absolute;
+    top: 36.75%;
+    margin-left: 8%;
+    padding: 0;
+}
+
+#title_icon{
+    display: block;
+    margin: auto;
+    width: 6.75%;
+}
+
+#title_img{
     margin: auto;
     display: block;
-    width: 40%;
-    border: 2px solid black;
+    position: relative;
+    padding: 0;
+    width: 100%;
+}
+
+#title_img_block{
+    background-image: URL("Resources/Misc/MichyPic_Cropped.jpg");
+    min-height: 580px;
+}
+
+#viewer_img{
+    vertical-align: middle;
+    display: block;
+    margin: auto;
+    width: 100%;
 }
