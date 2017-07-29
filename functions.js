@@ -35,7 +35,7 @@ window.onload = function(){
     });
     
     $("#viewer_img").click(function(){
-        albumForward($(this).attr("class")); 
+        albumForward($(this)); 
     });
     
     $("#right_arrow").click(function(){
