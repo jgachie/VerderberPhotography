@@ -140,7 +140,7 @@ function galleryViewer(element){
     $("#viewer_img").attr("src", album[0]);
     $("#gallery_viewer").attr("style", "visibility: visible");
     $("#gallery_viewer").fadeIn("slow");
-    $("body").attr("opacity", "0");
+    $("body").attr("opacity", "0")
 }
 
 function galleryViewerClose(){
