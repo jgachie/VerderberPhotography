@@ -95,19 +95,51 @@ figure:nth-of-type(4n){
     font-size: 80%;
 }
 
+.home_nav_left{
+    margin: 0 0 0 9.8%;
+    padding: 0;
+    float: left;
+    width: 40%;
+    position: relative;
+    z-index: 1;
+}
+
+.home_nav_right{
+    margin: 0 9.8% 0 0;
+    padding: 0;
+    float: right;
+    width: 40%;
+    position: relative;
+}
+
+.nav_img{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.overlay_text{
+    margin-top: 25%;
+    color: black;
+    text-decoration: none;
+    font-family: Edwardian Script ITC;
+    font-size: 400%;
+    text-align: center;
+}
+
 #title{
     color: black;
     font-size: 675%;
     font-family: Edwardian Script ITC;
     text-align: center;
     margin: 0px;
+    padding: 0;
     text-shadow: 0 0 5px #FFFFFF;
 }
 
 #title_block{
     position: absolute;
-    top: 36.5%; 
-    left: 0;
+    top: 36.75%;
     margin-left: 8%;
     padding: 0px;
 }
@@ -118,6 +150,11 @@ figure:nth-of-type(4n){
     position: relative;
     padding: 0px;
     width: 100%;
+}
+
+#title_img_block{
+    background-image: URL("Resources/Misc/MichyPic_Cropped.jpg");
+    min-height: 580px;
 }
 
 #title_icon{
@@ -293,13 +330,13 @@ figure:nth-of-type(4n){
     width: 100%;
 }
 
-#overlay{
+#gallery_overlay{
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0%;
     left: 0%;
     width: 100%;
-    height: 200%;
+    height: 100%;
     background-color: black;
     z-index: 1001;
     -moz-opacity: 0.8;
@@ -308,6 +345,13 @@ figure:nth-of-type(4n){
     display: none;
 }
 
-#title_img_block{
-    background-image: URL("Resources/Misc/MichyPic_Cropped.jpg");
+.nav_overlay{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: .8;
+    display: none;
 }

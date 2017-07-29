@@ -14,56 +14,34 @@ var fast = ["Resources/Fast_Album/Corvette.jpg", "Resources/Fast_Album/Aston_Mar
 var kitty = ["Resources/Kitty_Album/Tiger.jpg", "Resources/Kitty_Album/Lion.jpg", "Resources/Kitty_Album/Panther.jpg", "Resources/Kitty_Album/Snow_Leopard.jpg"];
 
 window.onload = function(){
+    if (window.location.href !== "http://localhost:8383/VerderberPhotography/index.html")
+        window.scroll(0, 325);
+    
     $(".gallery_album > img").mouseenter(function(event){
         albumInt = setInterval(function(){albumSwitch(event.target.id);}, 3000); 
     });
     
     $(".gallery_album > img").mouseleave(function(event){
-        clearInterval(albumInt);
-        var album = albumChooser(event.target.id);
-        
-        if ($("#" + event.target.id).attr("src") !== album[0]){
-            $("#" + event.target.id).fadeOut(function() { 
-                $(this).fadeIn("slow"); 
-                $(this).attr("src", album[0]);
-            });
-        }
-        albumCtr = 0;
+        albumRevert(event.target.id);
     });
     
     $(".gallery_album > img").click(function(event){
-        $("#overlay").fadeIn("slow");
-        
-        var album = albumChooser(event.target.id);
-        $("#viewer_img").attr("src", album[0]);
-        $("#gallery_viewer").attr("style", "visibility: visible");
-        $("#gallery_viewer").fadeIn("slow");
-        $("body").attr("opacity", "0");
+        galleryViewer(event.target.id);
     });
     
     $("#viewer_img").click(function(){
-        $("#gallery_viewer").fadeOut("slow");
-        $("#overlay").fadeOut("slow");
-        $("viewer_img").attr("src", "");
+        galleryViewerClose();
     });
     
     setInterval(titleSwitch, 5000);
-};
-
-function albumSwitch(element){
-    var album = albumChooser(element);
-    
-    $("#" + element).fadeOut(function() { 
-        $(this).fadeIn("slow"); 
-        $(this).attr("src", album[albumCtr]);
+    $(".nav_img").mouseenter(function(){
+        $(this).next().fadeIn(400);
     });
     
-    albumCtr++;
-    
-    if (albumCtr === album.length){
-        albumCtr = 0;
-    }
-}
+    $(".nav_img").next().mouseleave(function(){
+        $(this).fadeOut(400);
+    });
+};
 
 function albumChooser(name){
     switch (name.toUpperCase()){
@@ -90,9 +68,50 @@ function albumChooser(name){
     return name;
 }
 
-function titleSwitch(){
-    $("#title_img_block").attr("style", "background-image: URL(\"" + titleImgs[titleCtr] + "\"");
+function albumRevert(element){
+    clearInterval(albumInt);
+    var album = albumChooser(element);
     
+    if ($("#" + element).attr("src") !== album[0]){
+        $("#" + element).fadeOut(function() { 
+            $(this).fadeIn("slow"); 
+            $(this).attr("src", album[0]);
+        });
+    }
+    albumCtr = 0;
+}
+
+function albumSwitch(element){
+    var album = albumChooser(element);
+    
+    $("#" + element).fadeOut(function() { 
+        $(this).fadeIn("slow"); 
+        $(this).attr("src", album[albumCtr]);
+    });
+    
+    albumCtr++;
+    
+    if (albumCtr === album.length)
+        albumCtr = 0;
+}
+
+function galleryViewer(element){
+    $("#gallery_overlay").fadeIn("slow");
+    
+    var album = albumChooser(element);
+    $("#viewer_img").attr("src", album[0]);
+    $("#gallery_viewer").attr("style", "visibility: visible");
+    $("#gallery_viewer").fadeIn("slow");
+    $("body").attr("opacity", "0");
+}
+
+function galleryViewerClose(){
+    $("#gallery_viewer").fadeOut("slow");
+    $("#gallery_overlay").fadeOut("slow");
+    $("viewer_img").attr("src", "");
+}
+
+function titleSwitch(){
     $("#title_img").fadeOut(function() { 
         $(this).fadeIn("slow"); 
         $(this).attr("src", titleImgs[titleCtr]);
@@ -102,4 +121,6 @@ function titleSwitch(){
     
     if (titleCtr === titleImgs.length)
         titleCtr = 0;
+    
+    $("#title_img_block").attr("style", "background-image: URL(\"" + titleImgs[titleCtr] + "\"");
 }
