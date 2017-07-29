@@ -50,15 +50,17 @@ figure:nth-of-type(4n){
     margin-right: 0;
 }
 
-.title_link{
-    text-decoration: none;
+.contact_form{
+    margin-top: 0;
+    padding-top: 0;
+    font-family: Calibri;
+    font-size: 100%;
+    width: 45%;
+    height: 1.5em;
 }
 
-.page_header{
-    margin: 0;
-    font-family: Edwardian Script ITC;
-    text-align: center;
-    font-size: 300%;
+.contact_label{
+    font-size: 80%;
 }
 
 .gallery_album{
@@ -80,19 +82,6 @@ figure:nth-of-type(4n){
 
 .gallery_album img{
     width: 100%;
-}
-
-.contact_form{
-    margin-top: 0;
-    padding-top: 0;
-    font-family: Calibri;
-    font-size: 100%;
-    width: 45%;
-    height: 1.5em;
-}
-
-.contact_label{
-    font-size: 80%;
 }
 
 .home_nav_left{
@@ -138,46 +127,23 @@ figure:nth-of-type(4n){
     text-align: center;
 }
 
-#title{
-    color: black;
-    font-size: 675%;
+.page_header{
+    margin: 0;
     font-family: Edwardian Script ITC;
     text-align: center;
-    margin: 0px;
-    padding: 0;
-    text-shadow: 0 0 5px #FFFFFF;
+    font-size: 300%;
 }
 
-#title_block{
-    position: absolute;
-    top: 36.75%;
-    margin-left: 8%;
-    padding: 0;
+.title_link{
+    text-decoration: none;
 }
 
-#title_img{
+#about_img{
     margin: auto;
     display: block;
-    position: relative;
-    padding: 0;
-    width: 100%;
-}
-
-#title_img_block{
-    background-image: URL("Resources/Misc/MichyPic_Cropped.jpg");
-    min-height: 580px;
-}
-
-#title_icon{
-    display: block;
-    margin: auto;
-    width: 6.75%;
-}
-
-#home_p{
-    margin: 2% 10% 1% 10%;
-    padding-bottom: 1%;
-    border-bottom: 2px solid black;
+    width: 40%;
+    border: 2px solid black;
+    border-radius: 6px;
 }
 
 #contact{
@@ -187,6 +153,10 @@ figure:nth-of-type(4n){
     background-color: lightgray;
     padding: 2em;
     width: 60%;
+}
+
+#contact_email{
+    float: right;
 }
 
 #contact_info{
@@ -207,15 +177,15 @@ figure:nth-of-type(4n){
     color: orange;
 }
 
+#contact_message{
+    width: 100%;
+    min-height: 10em;
+    max-width: 100%;
+    font-family: Calibri;
+    font-size: 90%;
+}
+
 #contact_name{
-    float: left;
-}
-
-#contact_email{
-    float: right;
-}
-
-#contact_subject{
     float: left;
 }
 
@@ -223,12 +193,8 @@ figure:nth-of-type(4n){
     float: right;
 }
 
-#contact_message{
-    width: 100%;
-    min-height: 10em;
-    max-width: 100%;
-    font-family: Calibri;
-    font-size: 90%;
+#contact_subject{
+    float: left;
 }
 
 #contact_submit{
@@ -244,9 +210,54 @@ figure:nth-of-type(4n){
     margin-right: 40.5%;
 }
 
-#phone_label{
-    float: right;
-    margin-right: 23.05%;
+#gallery_overlay{
+    display: block;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1001;
+    -moz-opacity: 0.8;
+    opacity: .9;
+    filter: alpha(opacity=80);
+    display: none;
+}
+
+#gallery_viewer{
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 75%;
+    left: 25%;
+    top: 16%;
+    display: none;
+    max-width: 50%;
+    max-height: 50%;
+    opacity: 100%;
+    z-index: 2000;
+}
+
+#holder{
+    display: block;
+    margin: auto;
+}
+
+#holder_text{
+    text-align: center;
+}
+
+#home_p{
+    margin: 2% 10% 1% 10%;
+    padding-bottom: 1%;
+    border-bottom: 2px solid black;
+}
+
+#left_arrow{
+    position: fixed;
+    top: 50%;
+    left: 20.65%;
 }
 
 #navbar{
@@ -294,6 +305,17 @@ figure:nth-of-type(4n){
     
 }
 
+#phone_label{
+    float: right;
+    margin-right: 23.05%;
+}
+
+#right_arrow{
+    position: fixed;
+    top: 50%;
+    right: 20.65%;
+}
+
 #sidebar{
     margin-top: 1em;
     padding: 0 .5em 1em .5em;
@@ -311,35 +333,40 @@ figure:nth-of-type(4n){
     text-align: center;
 }
 
-#holder{
-    display: block;
-    margin: auto;
-}
-
-#holder_text{
+#title{
+    color: black;
+    font-size: 675%;
+    font-family: Edwardian Script ITC;
     text-align: center;
+    margin: 0px;
+    padding: 0;
+    text-shadow: 0 0 5px #FFFFFF;
 }
 
-#about_img{
+#title_block{
+    position: absolute;
+    top: 36.75%;
+    margin-left: 8%;
+    padding: 0;
+}
+
+#title_icon{
+    display: block;
+    margin: auto;
+    width: 6.75%;
+}
+
+#title_img{
     margin: auto;
     display: block;
-    width: 40%;
-    border: 2px solid black;
-    border-radius: 6px;
+    position: relative;
+    padding: 0;
+    width: 100%;
 }
 
-#gallery_viewer{
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    width: 75%;
-    left: 25%;
-    top: 16%;
-    display: none;
-    max-width: 50%;
-    max-height: 50%;
-    opacity: 100%;
-    z-index: 2000;
+#title_img_block{
+    background-image: URL("Resources/Misc/MichyPic_Cropped.jpg");
+    min-height: 580px;
 }
 
 #viewer_img{
@@ -347,31 +374,4 @@ figure:nth-of-type(4n){
     display: block;
     margin: auto;
     width: 100%;
-}
-
-#gallery_overlay{
-    display: block;
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    z-index: 1001;
-    -moz-opacity: 0.8;
-    opacity: .9;
-    filter: alpha(opacity=80);
-    display: none;
-}
-
-#left_arrow{
-    position: fixed;
-    top: 50%;
-    left: 20.65%;
-}
-
-#right_arrow{
-    position: fixed;
-    top: 50%;
-    right: 20.65%;
 }
