@@ -13,8 +13,6 @@ body{
     margin-bottom: 1em;
     width: 95%;
     height: 100%;
-    max-width: 1824px;
-    min-width: 960px;
     font-family: Calibri;
     font-size: 100%;
     max-width: 1920px;
@@ -33,6 +31,7 @@ main{
     min-height: 500px;
     width: 75%;
     border: 2px solid black;
+    border-radius: 8px;
     float: left;
 }
 
@@ -67,6 +66,7 @@ figure:nth-of-type(4n){
     padding: .5em;
     display: block;
     border: solid 2px black;
+    border-radius: 8px;
     width: 21.9%;
     float: left;
 }
@@ -152,14 +152,14 @@ figure:nth-of-type(4n){
     position: absolute;
     top: 36.75%;
     margin-left: 8%;
-    padding: 0px;
+    padding: 0;
 }
 
 #title_img{
     margin: auto;
     display: block;
     position: relative;
-    padding: 0px;
+    padding: 0;
     width: 100%;
 }
 
@@ -172,6 +172,12 @@ figure:nth-of-type(4n){
     display: block;
     margin: auto;
     width: 6.75%;
+}
+
+#home_p{
+    margin: 2% 10% 1% 10%;
+    padding-bottom: 1%;
+    border-bottom: 2px solid black;
 }
 
 #contact{
@@ -292,6 +298,7 @@ figure:nth-of-type(4n){
     margin-top: 1em;
     padding: 0 .5em 1em .5em;
     border: 2px solid black;
+    border-radius: 8px;
     float: right;
     min-height: 500px;
     min-width: 20%;
@@ -313,11 +320,12 @@ figure:nth-of-type(4n){
     text-align: center;
 }
 
-#about_img1{
+#about_img{
     margin: auto;
     display: block;
     width: 40%;
     border: 2px solid black;
+    border-radius: 6px;
 }
 
 #gallery_viewer{
@@ -325,7 +333,7 @@ figure:nth-of-type(4n){
     padding: 0;
     position: fixed;
     width: 75%;
-    left: 25.5%;
+    left: 25%;
     top: 16%;
     display: none;
     max-width: 50%;
@@ -356,8 +364,14 @@ figure:nth-of-type(4n){
     display: none;
 }
 
-#home_p{
-    margin: 2% 10% 1% 10%;
-    padding-bottom: 1%;
-    border-bottom: 2px solid black;
+#left_arrow{
+    position: fixed;
+    top: 50%;
+    left: 20.65%;
+}
+
+#right_arrow{
+    position: fixed;
+    top: 50%;
+    right: 20.65%;
 }

@@ -17,20 +17,41 @@ window.onload = function(){
     if (window.location.href !== "http://localhost:8383/VerderberPhotography/index.html")
         window.scroll(0, 325);
     
-    $(".gallery_album > img").mouseenter(function(event){
-        albumInt = setInterval(function(){albumSwitch(event.target.id);}, 3000); 
+    $(".gallery_album > img").mouseenter(function(){
+        var element = $(this);
+        albumInt = setInterval(function(){albumForward(element.attr("class"));}, 3000);
     });
     
-    $(".gallery_album > img").mouseleave(function(event){
-        albumRevert(event.target.id);
+    $(".gallery_album > img").mouseleave(function(){
+        albumRevert($(this).attr("class"));
     });
     
-    $(".gallery_album > img").click(function(event){
-        galleryViewer(event.target.id);
+    $(".gallery_album > img").click(function(){
+        galleryViewer($(this).attr("class"));
+    });
+    
+    $("#gallery_overlay").click(function(){
+        galleryViewerClose();
     });
     
     $("#viewer_img").click(function(){
-        galleryViewerClose();
+        albumForward($(this).attr("class")); 
+    });
+    
+    $("#right_arrow").click(function(){
+        albumForward($("#viewer_img").attr("class"));
+    });
+    
+    $("#left_arrow").click(function(){
+        albumReverse($("#viewer_img").attr("class"));
+    });
+    
+    $(".arrow").mouseenter(function(){
+        $(this).attr("style", "background-color: rgba(255, 255, 255, .2)");
+    });
+    
+    $(".arrow").mouseleave(function(){
+        $(this).removeAttr("style");
     });
     
     setInterval(titleSwitch, 5000);
@@ -68,23 +89,10 @@ function albumChooser(name){
     return name;
 }
 
-function albumRevert(element){
-    clearInterval(albumInt);
+function albumForward(element){
     var album = albumChooser(element);
     
-    if ($("#" + element).attr("src") !== album[0]){
-        $("#" + element).fadeOut(function() { 
-            $(this).fadeIn("slow"); 
-            $(this).attr("src", album[0]);
-        });
-    }
-    albumCtr = 0;
-}
-
-function albumSwitch(element){
-    var album = albumChooser(element);
-    
-    $("#" + element).fadeOut(function() { 
+    $("." + element).fadeOut(function() { 
         $(this).fadeIn("slow"); 
         $(this).attr("src", album[albumCtr]);
     });
@@ -95,10 +103,39 @@ function albumSwitch(element){
         albumCtr = 0;
 }
 
+function albumReverse(element){
+    var album = albumChooser(element);
+    
+    albumCtr--;
+    
+    if (albumCtr < 0){
+        albumCtr = album.length - 1;
+    }
+    
+    $("." + element).fadeOut(function(){
+        $(this).fadeIn("slow");
+        $(this).attr("src", album[albumCtr]);
+    });
+}
+
+function albumRevert(element){
+    clearInterval(albumInt);
+    var album = albumChooser(element);
+    
+    if ($("." + element).attr("src") !== album[0]){
+        $("." + element).fadeOut(function() { 
+            $(this).fadeIn("slow"); 
+            $(this).attr("src", album[0]);
+        });
+    }
+    albumCtr = 0;
+}
+
 function galleryViewer(element){
     $("#gallery_overlay").fadeIn("slow");
     
     var album = albumChooser(element);
+    $("#viewer_img").attr("class", element);
     $("#viewer_img").attr("src", album[0]);
     $("#gallery_viewer").attr("style", "visibility: visible");
     $("#gallery_viewer").fadeIn("slow");
@@ -108,7 +145,6 @@ function galleryViewer(element){
 function galleryViewerClose(){
     $("#gallery_viewer").fadeOut("slow");
     $("#gallery_overlay").fadeOut("slow");
-    $("viewer_img").attr("src", "");
 }
 
 function titleSwitch(){
