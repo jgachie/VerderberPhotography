@@ -28,7 +28,6 @@ main{
     margin-bottom: 1em;
     padding: .5em 1em .5em 1em;
     font-size: 120%;
-    min-height: 500px;
     width: 75%;
     border: 2px solid black;
     border-radius: 8px;
@@ -165,7 +164,7 @@ figure:nth-of-type(4n){
     padding-left: 1.25em;
     border-left: 2px solid gray;
     width: 28.6%;
-    min-height: 23.45em;
+    height: 23.45em;
 }
 
 #contact_info p{
@@ -179,7 +178,7 @@ figure:nth-of-type(4n){
 
 #contact_message{
     width: 100%;
-    min-height: 10em;
+    height: 10em;
     max-width: 100%;
     font-family: Calibri;
     font-size: 90%;
@@ -323,7 +322,7 @@ figure:nth-of-type(4n){
     border: 2px solid black;
     border-radius: 8px;
     float: right;
-    min-height: 500px;
+    height: 500px;
     min-width: 20%;
 }
 
@@ -336,7 +335,7 @@ figure:nth-of-type(4n){
 
 #title{
     color: black;
-    font-size: 675%;
+    font-size: 5.8vw;
     font-family: Edwardian Script ITC;
     text-align: center;
     margin: 0px;
@@ -367,7 +366,6 @@ figure:nth-of-type(4n){
 
 #title_img_block{
     background-image: URL("Resources/Misc/MichyPic_Cropped.jpg");
-    min-height: 580px;
 }
 
 #viewer_img{
